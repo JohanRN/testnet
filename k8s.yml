@@ -15,8 +15,8 @@ spec:
         app: service-mstest
     spec:
       containers:
-        - name: ms-test
-          image: johanrn21/ms-test:latest
+        - name: testapi
+          image: johanrn21/testapi
           ports:
             - containerPort: 80 #change port value 8080 on microservice development
           imagePullPolicy: Always
