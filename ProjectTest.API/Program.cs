@@ -11,13 +11,13 @@ var app = builder.Build();
 app.MapGet("/", () =>
 {
     app.Logger.LogInformation("Initial Home Get");
-    return "V2 Diboks enginier GET - Net 6sss Running ... 15092023-v1.0.0 CI/CD in AKS v1.0.0 POLYGLOT";
+    return "V1 Diboks enginier GET - Net 6";
 });
 
 app.MapPost("/", () =>
 {
     app.Logger.LogInformation("Initial Home Post");
-    return "V2 Diboks enginier  POST - Net 6ss Running ...15092023-v1.0.0 CI/CD in AKS v1.0.0 POLYGLOT";
+    return "V1 Diboks enginier  POST - Net 6";
 });
 
 //app.Run($"http://0.0.0.0:{port}");
