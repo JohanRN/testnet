@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+  labels:
+    app: service-mstest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-mstest
+  template:
+    metadata:
+      labels:
+        app: service-mstest
+    spec:
+      containers:
+        - name: ms-test
+          image: johanrn21/ms-test:latest
+          ports:
+            - containerPort: 80 #change port value 8080 on microservice development
+          imagePullPolicy: Always
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: app-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: service-mstest
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80 # same to line 21
+      name: http
