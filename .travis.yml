@@ -35,7 +35,7 @@ deploy:
   # Skip cleanup so api_key.py and vendored dependencies are still there
   skip_cleanup: true
   keyfile: devopstravis-ci-336f8da65cc1.json
-  project: devopsTravis-CI
+  project: devopstravis-ci
   version: latest
   default: true
   on:
