@@ -12,10 +12,17 @@ branches:
 before_install:
   - sudo rm -rf /var/lib/apt/lists/*
   - sudo apt-get update
-  - sudo apt-get install -y python3.8
-  - which python3.8
-  - python3.8 --version
-  - export CLOUDSDK_PYTHON=python3.8
+  - sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+    libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+    xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
+  - curl https://pyenv.run | bash
+  - export PATH="$HOME/.pyenv/bin:$PATH"
+  - eval "$(pyenv init -)"
+  - eval "$(pyenv virtualenv-init -)"
+  - pyenv install 3.8.0
+  - pyenv global 3.8.0
+  - python --version
+  - export CLOUDSDK_PYTHON=python
   - curl https://sdk.cloud.google.com | CLOUDSDK_CORE_DISABLE_PROMPTS=1 bash
   - source $HOME/google-cloud-sdk/path.bash.inc
   - gcloud components update --quiet
