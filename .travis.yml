@@ -5,7 +5,7 @@ dist: focal
 dotnet: 6.0.202
 branches:
   only:
-    - master
+    - main
 #    - develop
 #script:
 #  - dotnet build
