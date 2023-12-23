@@ -36,7 +36,7 @@ deploy:
   skip_cleanup: true
   keyfile: devopstravis-ci-336f8da65cc1.json
   project: devopstravis-ci
-  version: latest
+  version: v2
   default: true
   on:
     all_branches: true
